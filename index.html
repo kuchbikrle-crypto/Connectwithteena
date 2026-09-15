@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Talk With Teena</title>
+
+  <meta name="description" content="Talk with Teena. Connect through Telegram or WhatsApp.">
+  <meta name="theme-color" content="#120b20">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(190, 50, 150, 0.35), transparent 35%),
+        linear-gradient(145deg, #08050d, #160a1e 50%, #09050e);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      margin: auto;
+      padding: 28px 18px 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: #e9d9ea;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #35e67c;
+      box-shadow: 0 0 12px #35e67c;
+    }
+
+    h1 {
+      font-size: clamp(38px, 10vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+
+      background: linear-gradient(90deg, #fff, #f5a9e8, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: #c8b8ca;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto 26px;
+    }
+
+    .main-card {
+      position: relative;
+      padding: 25px 18px 20px;
+      border-radius: 28px;
+
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .status {
+      display: inline-block;
+      color: #9ff5bd;
+      font-size: 12px;
+      margin-bottom: 20px;
+      letter-spacing: 0.7px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 13px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      width: 100%;
+      min-height: 58px;
+      padding: 14px 18px;
+
+      border-radius: 17px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(255,255,255,0.08);
+
+      transition: transform 0.2s ease,
+                  background 0.2s ease,
+                  box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.13);
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #218fe8, #176fc4);
+      border: none;
+      box-shadow: 0 10px 30px rgba(33,143,232,0.25);
+    }
+
+    .telegram:hover {
+      background: linear-gradient(135deg, #2b9df5, #1978d2);
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #20bd68, #159b53);
+      border: none;
+      box-shadow: 0 10px 30px rgba(32,189,104,0.22);
+    }
+
+    .whatsapp:hover {
+      background: linear-gradient(135deg, #27ca73, #18a95c);
+    }
+
+    .icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .info-box {
+      padding: 16px 8px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .info-box strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .info-box span {
+      display: block;
+      color: #a99bab;
+      font-size: 10px;
+    }
+
+    .note {
+      margin-top: 20px;
+      color: #8f8291;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 27px;
+      color: #766a78;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .info-grid {
+        gap: 7px;
+      }
+
+      .info-box {
+        padding: 14px 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="badge">
+      <span class="dot"></span>
+      AVAILABLE NOW
+    </div>
+
+    <h1>TALK WITH TEENA</h1>
+
+    <p class="subtitle">
+      Connect with Teena and choose your preferred way to chat.
+    </p>
+
+    <section class="main-card">
+
+      <div class="status">
+        ● Currently available
+      </div>
+
+      <div class="buttons">
+
+        <!-- Telegram -->
+        <a
+          class="btn telegram"
+          href="https://t.me/teena_private"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon">✈️</span>
+          <span>Chat on Telegram</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/919649607089"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon">💬</span>
+          <span>Chat on WhatsApp</span>
+        </a>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-box">
+          <strong>PRIVATE</strong>
+          <span>Direct Chat</span>
+        </div>
+
+        <div class="info-box">
+          <strong>QUICK</strong>
+          <span>Easy Connect</span>
+        </div>
+
+        <div class="info-box">
+          <strong>ONLINE</strong>
+          <span>Available</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <p class="note">
+      Choose Telegram or WhatsApp above to continue.
+    </p>
+
+    <footer>
+      © 2026 Talk With Teena
+    </footer>
+
+  </main>
+
+</body>
+</html>
